@@ -1,6 +1,8 @@
-﻿namespace ProvaPub.Models
+﻿using ProvaPub.Interfaces;
+
+namespace ProvaPub.Models
 {
-	public class CustomerList
+	public class CustomerList  : IPaginatedList<Customer>
 	{
 		public List<Customer> Customers { get; set; }
 		public int TotalCount { get; set; }

@@ -1,16 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProvaPub.Interfaces;
 using ProvaPub.Models;
 using ProvaPub.Repository;
 
 namespace ProvaPub.Services
 {
-    public class CustomerService
+    public class CustomerService 
     {
-        TestDbContext _ctx;
+        private readonly TestDbContext _ctx;
+        private readonly IPaymentStrategy _paymentStrategy;
 
-        public CustomerService(TestDbContext ctx)
+        public CustomerService(TestDbContext ctx, IPaymentStrategy paymentStrategy)
         {
             _ctx = ctx;
+            _paymentStrategy = paymentStrategy;
         }
 
         public CustomerList ListCustomers(int page)

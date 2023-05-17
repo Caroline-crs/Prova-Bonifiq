@@ -3,13 +3,13 @@ using ProvaPub.Repository;
 
 namespace ProvaPub.Services
 {
-	public class ProductService
+	public class ProductService 
 	{
 		TestDbContext _ctx;
 
-		public ProductService(TestDbContext ctx)
+		public ProductService(TestDbContext dbContext)  
 		{
-			_ctx = ctx;
+            _ctx = dbContext;
 		}
 
 		public ProductList  ListProducts(int page)

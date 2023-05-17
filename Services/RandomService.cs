@@ -2,7 +2,8 @@
 {
 	public class RandomService
 	{
-		int seed;
+		 
+		int seed = DateTime.Now.Millisecond;
 		public RandomService()
 		{
 			seed = Guid.NewGuid().GetHashCode();
